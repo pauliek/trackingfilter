@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="chrome://trackingfilter/content/overlay.js"/>
+  <script src="chrome://trackingfilter/content/TrackingFilter.js"/>
+  <script src="chrome://trackingfilter/content/TrackingFilterDebug.js"/>
+  <script src="chrome://trackingfilter/content/TrackingFilterCaches.js"/>
+  <script src="chrome://trackingfilter/content/TrackingFilterRegex.js"/>
+  <script src="chrome://trackingfilter/content/TrackingFilterList.js"/>
+  <script src="chrome://trackingfilter/content/TrackingFilterListConfiguration.js"/>
+  <script src="chrome://trackingfilter/content/TrackingFilterSettings.js"/>
+  
+  
+
+    <menupopup id="menu_ToolsPopup">
+        
+        <menu id="trackingfilter-tools-menu" label="TrackingFilter">
+            <menupopup id="tf-menu-popup">
+                <menuitem id="tf-preferences" label="Preferences" oncommand="showTFPreferences();"/>
+            </menupopup>
+        </menu>
+
+    </menupopup>
+
+    <statusbar id="status-bar">
+        <statusbarpanel id="trackingfilter-statusbarpanel" class="statusbarpanel-menu-iconic"
+                        src="chrome://trackingfilter/skin/status-icon-16x16.png"
+                        tooltiptext="Tracking Filter">
+          <menupopup id="tf-status-menupopup">
+            <menuseparator/>
+            <menuitem id="tf-status-preferences" label="Preferences" oncommand="showTFPreferences();"/>
+        </menupopup>
+        </statusbarpanel>
+    </statusbar>
+
+    <window id="main-window">
+        <script type="application/x-javascript">
+          window.addEventListener("load", TrackingFilter.init(), false);
+        </script>
+    </window>
+
+</overlay>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+
+<dialog id="tf-preferences-window" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
+   title="TrackingFilter Preferences"
+   xmlns:h="http://www.w3.org/1999/xhtml" flex="1" 
+    onload="TFPreferencesEditor.onDisplay();"
+    ondialogaccept="return TFPreferencesEditor.save();">
+
+    <script type="application/x-javascript" src="chrome://trackingfilter/content/TrackingFilterDebug.js"/>
+    <script type="application/x-javascript" src="chrome://trackingfilter/content/TrackingFilterCaches.js"/>
+    <script type="application/x-javascript" src="chrome://trackingfilter/content/TrackingFilterSettings.js"/>
+    <script type="application/x-javascript" src="chrome://trackingfilter/content/TrackingFilterListConfiguration.js"/>
+    <script type="application/x-javascript" src="chrome://trackingfilter/content/preferences.js"/>
+
+    <hbox>
+        <label control="tf-preferences-lists" value="Active list"/>
+        <menulist id="tf-preferences-lists" oncommand="TFPreferencesEditor.onChangeMenuList();">
+            <menupopup id="tf-preferences-lists-menupopup">
+            </menupopup>
+        </menulist>
+    </hbox>
+
+   <vbox>
+   <groupbox flex="2" id="tf-preferences-filters">
+      <caption label="Active Filters"/>
+   </groupbox>
+   </vbox>
+
+</dialog>
