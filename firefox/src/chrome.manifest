@@ -1,0 +1,4 @@
+content   trackingfilter                content/
+overlay chrome://browser/content/browser.xul  chrome://trackingfilter/content/TrackingFilter.xul
+
+skin	trackingfilter	classic/1.0	skin/
